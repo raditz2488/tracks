@@ -1,8 +1,8 @@
 import React from 'react';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import {
   createAppContainer,
-  createStackNavigator,
-  createBottomTabNavigator,
   createSwitchNavigator
 } from 'react-navigation';
 import SignupScreen from './src/screens/SignupScreen';
@@ -28,3 +28,5 @@ const switchNavigator = createSwitchNavigator({
     Account: AccountScreen
   })
 });
+
+export default createAppContainer(switchNavigator);
