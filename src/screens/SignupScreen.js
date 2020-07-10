@@ -4,12 +4,14 @@ import { Button, Text, Input  } from 'react-native-elements';
 import Spacer from '../components/Spacer';
 
 const SignupScreen = ( { navigation } ) => {
-    return <>
+    return <View>
+        <Spacer>
         <Text h3>SignupScreen</Text>
+        </Spacer>
         <Input label='Email'/>
         <Input label='Password'/>
         <Button title={"Signup"}/>
-    </>
+    </View>
 }
 
 const styles = StyleSheet.create({});
