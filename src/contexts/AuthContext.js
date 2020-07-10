@@ -9,6 +9,6 @@ const reducer = (state, action) => {
 
 export default createDataContext({
     reducer,
-    {},
-    {}
+    actions: {},
+    initialValue: {}
 });
