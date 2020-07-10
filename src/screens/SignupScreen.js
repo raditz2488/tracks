@@ -9,8 +9,11 @@ const SignupScreen = ( { navigation } ) => {
         <Text h3>SignupScreen</Text>
         </Spacer>
         <Input label='Email'/>
+        <Spacer/>
         <Input label='Password'/>
+        <Spacer>
         <Button title={"Signup"}/>
+        </Spacer>
     </View>
 }
 
