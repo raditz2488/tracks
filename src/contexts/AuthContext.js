@@ -1,6 +1,6 @@
 import createDataContext from './createDataContext';
 
-const reducer = (state, action) => {
+const authReducer = (state, action) => {
     switch(action.type) {
         default:
             return state;
@@ -8,7 +8,7 @@ const reducer = (state, action) => {
 }
 
 export default createDataContext(
-    reducer,
+    authReducer,
     {},
     {}
 );
