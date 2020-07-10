@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-const Spacer = () => {
-    return <View style={styles.margin}/>
+const Spacer = ({ children }) => {
+    return <View style={styles.margin}>
+        {children}
+    </View>
 }
 
 const styles = StyleSheet.create({
