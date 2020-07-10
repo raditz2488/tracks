@@ -12,9 +12,11 @@ export default (reducer, actions, initialValue) => {
             dispatchActions[key] = actions[key](dispatchActions);
         }
 
-        return <Context.Provider value={ {state, ...dispatchActions} }>
-            {children}
-        </Context.Provider>
+        return (
+            <Context.Provider value={ {state, ...dispatchActions} }>
+                {children}
+            </Context.Provider>
+        );
     }
 
     return { Context, Provider };
