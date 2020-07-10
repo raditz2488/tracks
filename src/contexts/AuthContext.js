@@ -1,4 +1,5 @@
 import createDataContext from './createDataContext';
+import tracker from '../api/tracker';
 
 const authReducer = (state, action) => {
     switch(action.type) {
