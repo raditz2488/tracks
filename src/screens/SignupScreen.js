@@ -6,7 +6,7 @@ import Spacer from '../components/Spacer';
 const SignupScreen = ( { navigation } ) => {
     return <View>
         <Spacer>
-        <Text h3>SignupScreen</Text>
+        <Text h3>Sign Up for Tracker</Text>
         </Spacer>
         <Input label='Email'/>
         <Spacer/>
