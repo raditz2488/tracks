@@ -9,9 +9,9 @@ const authReducer = (state, action) => {
 }
 
 const signup = (dispatch) => {
-    //Accept email and password and call api
-    //If logged in update reducer
-    //If failure report it
+    return (email, password) => {
+
+    };
 }
 
 const signin = (dispatch) => {
