@@ -28,7 +28,7 @@ const SignupScreen = ( { navigation } ) => {
             secureTextEntry
         />
         <Spacer>
-        <Button title={"Signup"}/>
+        <Button title={"Signup"} onPress={()=> signup(email, password)}/>
         </Spacer>
     </View>
 }
