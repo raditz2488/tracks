@@ -14,7 +14,7 @@ const signup = (dispatch) => {
             const response = await trackerAPI.post("/signup", { email, password });
             console.log(response.data);
         } catch(error) {
-            console.log(error.messsage);
+            console.log(error.response.data);
         }
     };
 }
