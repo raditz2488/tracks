@@ -12,9 +12,9 @@ const signup = (dispatch) => {
     return async (email, password) => {
         try {
             const response = await trackerAPI.post("/signup", { email, password });
-            console.log(response.data);
+            dispatch({ type:'signup', payload:response.data })
         } catch(error) {
-            console.log(error.response.data);
+            dispatch({ type:'signup_failure', payload: error.response.data })
         }
     };
 }
