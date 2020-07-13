@@ -13,9 +13,15 @@ const SignupScreen = ( { navigation } ) => {
         <Spacer>
         <Text h3>Sign Up for Tracker</Text>
         </Spacer>
-        <Input label='Email'/>
+        <Input label='Email'
+            value={email}
+            onChangeText={ setEmail }
+        />
         <Spacer/>
-        <Input label='Password'/>
+        <Input label='Password'
+            value={password}
+            onChangeText={ setPassword }
+        />
         <Spacer>
         <Button title={"Signup"}/>
         </Spacer>
