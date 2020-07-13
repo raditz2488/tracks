@@ -4,7 +4,10 @@ import trackerAPI from '../api/tracker';
 const authReducer = (state, action) => {
     switch(action.type) {
         case 'signup_failure':
-            return { ...state, errorMessage: action.payload }
+            return { ...state, errorMessage: action.payload };
+
+        case 'signup':
+            return { ...state, errorMessage: "", token: action.payload}
         default:
             return state;
     }
@@ -14,7 +17,7 @@ const signup = (dispatch) => {
     return async (email, password) => {
         try {
             const response = await trackerAPI.post("/signup", { email, password });
-            dispatch({ type:'signup', payload:response.data });
+            dispatch({ type:'signup', payload:response.data.token });
         } catch(error) {
             dispatch({
                 type:'signup_failure', 
@@ -37,5 +40,5 @@ const logout = (dispatch) => {
 export const { Context, Provider } = createDataContext(
     authReducer,
     { signup },
-    { errorMessage: "" }
+    { errorMessage: "", token: null }
 );
