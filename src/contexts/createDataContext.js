@@ -9,7 +9,7 @@ export default (reducer, actions, initialValue) => {
         const dispatchActions = {};
 
         for (let key in actions) {
-            dispatchActions[key] = actions[key](dispatchActions);
+            dispatchActions[key] = actions[key](dispatch);
         }
 
         return (
