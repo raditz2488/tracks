@@ -1,7 +1,8 @@
 import createDataContext from './createDataContext';
 import trackerAPI from '../api/tracker';
 import AsyncStorage from 'react';
-
+import { navigate } from '../navigatorRef';
+ 
 const authReducer = (state, action) => {
     switch(action.type) {
         case 'signup_failure':
