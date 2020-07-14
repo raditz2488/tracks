@@ -2,7 +2,7 @@ import createDataContext from './createDataContext';
 import trackerAPI from '../api/tracker';
 import AsyncStorage from 'react';
 import { navigate } from '../navigatorRef';
- 
+
 const authReducer = (state, action) => {
     switch(action.type) {
         case 'signup_failure':
@@ -21,6 +21,8 @@ const signup = (dispatch) => {
             const response = await trackerAPI.post("/signup", { email, password });
             AsyncStorage.setItem('token', response,data.token)
             dispatch({ type:'signup', payload:response.data.token });
+
+            navigate('TrackList');
         } catch(error) {
             dispatch({
                 type:'signup_failure', 
