@@ -1,5 +1,6 @@
 import createDataContext from './createDataContext';
 import trackerAPI from '../api/tracker';
+import AsyncStorage from 'react';
 
 const authReducer = (state, action) => {
     switch(action.type) {
@@ -17,6 +18,7 @@ const signup = (dispatch) => {
     return async (email, password) => {
         try {
             const response = await trackerAPI.post("/signup", { email, password });
+            AsyncStorage.setItem('token', response,data.token)
             dispatch({ type:'signup', payload:response.data.token });
         } catch(error) {
             dispatch({
