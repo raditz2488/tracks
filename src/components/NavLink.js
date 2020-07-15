@@ -12,4 +12,4 @@ const NavLink = ({ navigation, text, routeName }) => {
     );
 }
 
-export default NavLink;
+export default withNavigation(NavLink);
