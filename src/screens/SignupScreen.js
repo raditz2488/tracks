@@ -11,7 +11,7 @@ const SignupScreen = ( { navigation } ) => {
     return <View>
         <AuthForm
             headerText="Sign Up for tracks"
-            errorMessage="Something went wrong."
+            errorMessage={state.errorMessage}
             buttonText="Sign Up"
             onSubmit={signup}
         />
