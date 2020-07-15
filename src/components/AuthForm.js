@@ -6,7 +6,7 @@ import Spacer from '../components/Spacer';
 const AuthForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
+
     return (
         <>
             <Spacer>
@@ -33,4 +33,13 @@ const AuthForm = () => {
         </>
     );
 }
+
+const styles = StyleSheet.create({
+    errorMessage: {
+        fontSize: 16,
+        color: 'red',
+        marginLeft: 15,
+        marginTop:15,
+    }
+});
 
