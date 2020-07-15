@@ -6,12 +6,15 @@ import { Context as AuthContext, Context } from '../contexts/AuthContext';
 import AuthForm from '../components/AuthForm';
 
 const SignupScreen = ( { navigation } ) => {
-     
-
     const { state, signup } = useContext(AuthContext);
 
     return <View>
-        
+        <AuthForm
+            headerText="Sign Up for tracks"
+            errorMessage="Something went wrong."
+            buttonText="Sign Up"
+            onSubmit={signup}
+        />
     </View>
 }
 
