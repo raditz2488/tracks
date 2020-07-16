@@ -72,6 +72,6 @@ const logout = (dispatch) => {
 
 export const { Context, Provider } = createDataContext(
     authReducer,
-    { signup },
+    { signup, signin },
     { errorMessage: "", token: null }
 );
