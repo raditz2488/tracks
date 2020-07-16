@@ -8,8 +8,14 @@ const authReducer = (state, action) => {
         case 'signup_failure':
             return { ...state, errorMessage: action.payload };
 
+        case 'signin_failure':
+            return {...state, errorMessage: action.payload };
+
         case 'signup':
-            return { ...state, errorMessage: "", token: action.payload}
+            return { ...state, errorMessage: "", token: action.payload };
+
+        case 'signin':
+            return {...state, errorMessage:"", token: action.payload };
         default:
             return state;
     }
@@ -38,10 +44,26 @@ const signup = (dispatch) => {
     };
 }
 
-const signin = (dispatch) => {
-    //Accept email and password and call api
-    //If logged in update reducer
-    //If failure report it
+const signin = async (dispatch) => {
+    try {
+        const response = await trackerAPI.post("/signin", { email, password });
+        await AsyncStorage.setItem("token", response.data.token, (err) => {
+            dispatch({
+                type: "signin_failure",
+                payload: "Something went wrong with signin."
+            })
+        })
+
+        dispatch({
+            type: "signin",
+            payload: response.data.token
+        });
+    } catch(err) {
+        dispatch({
+            type: "signin_failure",
+            payload: "Something went wrong with signin." 
+        });
+    }
 }
 
 const logout = (dispatch) => {
