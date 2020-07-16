@@ -7,9 +7,10 @@ import { Context as AuthContext } from '../contexts/AuthContext';
 import { NavigationEvents } from 'react-navigation';
 
 const SigninScreen = ( { navigation } ) => {
-    const { state, signin } = useContext(AuthContext);
+    const { state, signin, clearErrorMessage } = useContext(AuthContext);
 
     return <View style={styles.container}>
+        <NavigationEvents onWillBlur={clearErrorMessage} />
         <AuthForm
             headerText="Sign In for tracks"
             errorMessage={state.errorMessage}
