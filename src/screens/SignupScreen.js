@@ -9,7 +9,7 @@ import NavLink from '../components/NavLink';
 const SignupScreen = ( { navigation } ) => {
     const { state, signup } = useContext(AuthContext);
 
-    return <View>
+    return <View style={styles.container}>
         <AuthForm
             headerText="Sign Up for tracks"
             errorMessage={state.errorMessage}
