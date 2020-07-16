@@ -5,6 +5,7 @@ import Spacer from '../components/Spacer';
 import { Context as AuthContext, Context } from '../contexts/AuthContext';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
+import { NavigationEvents } from 'react-navigation';
 
 const SignupScreen = ( { navigation } ) => {
     const { state, signup } = useContext(AuthContext);

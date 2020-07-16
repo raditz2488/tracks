@@ -4,6 +4,7 @@ import { Button } from 'react-native-elements';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
 import { Context as AuthContext } from '../contexts/AuthContext';
+import { NavigationEvents } from 'react-navigation';
 
 const SigninScreen = ( { navigation } ) => {
     const { state, signin } = useContext(AuthContext);
