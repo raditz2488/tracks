@@ -20,7 +20,7 @@ const authReducer = (state, action) => {
         case 'clear_error_message':
             return {...state, errorMessage:""};
 
-        catch 'logout':
+        case 'logout':
             return { ...state, errorMessage: "", token: null }
         default:
             return state;
