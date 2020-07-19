@@ -6,6 +6,8 @@ import Map from '../components/Map';
 import { requestPermissionsAsync } from 'expo-location';
 
 const TrackCreateScreen = () => {
+    const [err, setErr] = useState(null);
+
     const startWatching = async () => {
         try {
             const granted = await requestPermissionsAsync()
