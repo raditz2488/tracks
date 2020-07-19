@@ -19,6 +19,9 @@ const authReducer = (state, action) => {
 
         case 'clear_error_message':
             return {...state, errorMessage:""};
+
+        catch 'logout':
+            return { ...state, errorMessage: "", token: null }
         default:
             return state;
     }
@@ -98,9 +101,20 @@ const clearErrorMessage = ( dispatch ) => {
     }
 }
 
-const logout = (dispatch) => {
-    //logout
+const logout = (dispatch) => async () => {
+    try {
+        await AsyncStorage.removeItem('token', (err) => {
+            if(!err) {
+                dispatch({
+                    action:'logout'
+                });
+            }
+        })
+    } catch(err) {
+
+    }
 }
+
 
 export const { Context, Provider } = createDataContext(
     authReducer,
