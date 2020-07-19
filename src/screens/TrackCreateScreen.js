@@ -6,8 +6,10 @@ import { SafeAreaView } from 'react-navigation';
 
 const TrackCreateScreen = () => {
     return <>
+    <SafeAreaView>
     <Text h3>Create Track</Text>
     <MapView style={styles.map}/>
+    </SafeAreaView>
     </>
 }
 
