@@ -19,6 +19,9 @@ const TrackCreateScreen = () => {
         }
     }
 
+    useEffect(() => {
+        startWatching()
+    }, []);
     return <>
         <SafeAreaView>
             <Text h3>Create Track</Text>
