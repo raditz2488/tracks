@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Text } from 'react-native-elements';
 import MapView from 'react-native-maps';
+import { SafeAreaView } from 'react-navigation';
 
 const TrackCreateScreen = () => {
     return <>
