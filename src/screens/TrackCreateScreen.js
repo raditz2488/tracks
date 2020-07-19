@@ -14,8 +14,8 @@ const TrackCreateScreen = () => {
             if(!granted) {
                 throw new Error("Location permission not granted");
             }
-        } catch(err) {
-
+        } catch(e) {
+            setErr(e);
         }
     }
 
