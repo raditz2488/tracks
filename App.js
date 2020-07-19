@@ -16,6 +16,7 @@ import { setNavigator } from './src/navigatorRef';
 import AuthResolveScreen from './src/screens/AuthResolveScreen';
  
 const switchNavigator = createSwitchNavigator({
+  authResolve: AuthResolveScreen,
   loginFlow: createStackNavigator({
     Signup: SignupScreen,
     Signin: SigninScreen
@@ -30,6 +31,8 @@ const switchNavigator = createSwitchNavigator({
     TrackCreate: TrackCreateScreen,
     Account: AccountScreen
   })
+}, {
+  defaultRouteName: 'authResolve'
 });
 
 const App = createAppContainer(switchNavigator);
