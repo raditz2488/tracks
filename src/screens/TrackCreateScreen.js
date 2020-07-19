@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Text } from 'react-native-elements';
 import { SafeAreaView } from 'react-navigation';
 import Map from '../components/Map';
+import { requestPermissionsAsync } from 'expo-location';
 
 const TrackCreateScreen = () => {
     return <>
