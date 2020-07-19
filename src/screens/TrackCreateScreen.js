@@ -6,10 +6,18 @@ import { SafeAreaView } from 'react-navigation';
 
 const TrackCreateScreen = () => {
     return <>
-    <SafeAreaView>
-    <Text h3>Create Track</Text>
-    <MapView style={styles.map}/>
-    </SafeAreaView>
+        <SafeAreaView>
+            <Text h3>Create Track</Text>
+            <MapView 
+                style={styles.map}
+                initialRegion={{
+                    latitude:37.33233,
+                    longitude: -122.03121,
+                    latitudeDelta: 0.01,
+                    longitudeDelta: 0.01
+                }}
+            />
+        </SafeAreaView>
     </>
 }
 
