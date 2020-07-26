@@ -22,7 +22,7 @@ export default (callback) => {
         }
     }
 
-    useEffect({
+    useEffect(() => {
         startWatching();
     }, []);
 
