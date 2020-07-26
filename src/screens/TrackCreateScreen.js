@@ -8,8 +8,8 @@ import { Context as LocationContext } from '../contexts/LocationContext';
 import useLocation from '../hooks/useLocation';
 
 const TrackCreateScreen = () => {
-    const { addLocation } = useContext( true, LocationContext);
-    const [err] = useLocation(addLocation);
+    const { addLocation } = useContext( LocationContext);
+    const [err] = useLocation(true, addLocation);
 
     return <>
         <SafeAreaView>
