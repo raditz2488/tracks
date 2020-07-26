@@ -6,15 +6,27 @@ const locationReducer = (state, action) => {
             return { ...state, currentLocation: action.payload };
 
         case 'record_location':
-            return { ...state, locations: [...state.locations, action.payload] }
+            return { ...state, locations: [...state.locations, action.payload] };
+
+        case 'start_recording':
+            return { ...state, recording: true };
+
+        case 'stop_recording':
+            return { ...state, recording: false};
 
         default:
             return state;
     }
 };
 
-const startRecording = dispatch => () => {};
-const stopRecording = dispatch => () => {};
+const startRecording = dispatch => () => {
+    console.log("Recording to start:::::::::");
+    dispatch({type: 'start_recording'});
+};
+const stopRecording = dispatch => () => {
+    dispatch({type: 'stop_recording'});
+};
+
 const addLocation = dispatch => (location, isRecording) => {
     dispatch({ type: 'add_Location', payload: location});
     if(isRecording) {
