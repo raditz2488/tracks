@@ -13,7 +13,7 @@ const locationReducer = (state, action) => {
 const startRecording = dispatch => () => {};
 const stopRecording = dispatch => () => {};
 const addLocation = dispatch => (location) => {
-    dispatch({ type: 'add_location', payload: location});
+    dispatch({ type: 'add_Location', payload: location});
 };
 
 export const { Context, Provider } = createDataContext(
