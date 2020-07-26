@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { requestPermissionsAsync, watchPositionAsync, Accuracy } from 'expo-location';
 
-export default () => {
+export default (callback) => {
     const [err, setErr] = useState(null);
 
     const startWatching = async () => {
@@ -16,9 +16,7 @@ export default () => {
                 accuracy: Accuracy.BestForNavigation,
                 timeInterval: milliSecondsInASecond,
                 distanceInterval: distanceIntervalInMeters
-            }, (location) => {
-                addLocation(location);
-            });
+            }, callback);
         } catch(e) {
             setErr(e);
         }
