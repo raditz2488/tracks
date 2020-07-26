@@ -1,10 +1,15 @@
 import React from 'react';
 import { Input, Button } from 'react-native-elements';
+import Spacer from '../components/Spacer';
 
 const TrackForm = () => {
     return <>
-        <Input placeholder="Enter track name" />
-        <Button title="Start recording" />
+        <Spacer>
+            <Input placeholder="Enter track name" />
+        </Spacer>
+        <Spacer>
+            <Button title="Start recording" />
+        </Spacer>
     </>
 }
 
