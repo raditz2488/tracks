@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
 import MapView, { Polyline } from 'react-native-maps';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ActivityIndicator } from 'react-native';
 import { Context as LocationContext } from '../contexts/LocationContext';
 
 const Map = () => {
 
     const { state } = useContext(LocationContext);
+
+    if (state.currentLocation == null) {
+        return <ActivityIndicator size="large" style={ { marginTop: 200 } }/>;
+    }
 
     return <MapView 
         style={styles.map}
