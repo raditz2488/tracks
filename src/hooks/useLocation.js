@@ -3,6 +3,7 @@ import { requestPermissionsAsync, watchPositionAsync, Accuracy } from 'expo-loca
 
 export default (shouldTrack, callback) => {
     const [err, setErr] = useState(null);
+    const [subscriber, setSubscriber] = useState(null)
 
     const startWatching = async () => {
         const milliSecondsInASecond = 1000
