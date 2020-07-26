@@ -12,7 +12,7 @@ const locationReducer = (state, action) => {
 
 const startRecording = dispatch => () => {};
 const stopRecording = dispatch => () => {};
-const addLocation = dispatch => (location) => {
+const addLocation = dispatch => (location, isRecording) => {
     dispatch({ type: 'add_Location', payload: location});
 };
 
