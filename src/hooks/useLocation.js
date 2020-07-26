@@ -13,19 +13,27 @@ export default (shouldTrack, callback) => {
             if(!granted) {
                 throw new Error("Location permission not granted");
             }
-            await watchPositionAsync({
+            const sub = await watchPositionAsync({
                 accuracy: Accuracy.BestForNavigation,
                 timeInterval: milliSecondsInASecond,
                 distanceInterval: distanceIntervalInMeters
             }, callback);
+
+            setSubscriber(sub);
         } catch(e) {
             setErr(e);
         }
     }
 
     useEffect(() => {
-        startWatching();
-    }, []);
+        if(shouldTrack) {
+            startWatching();
+        } else {
+            subscriber.remove();
+            setSubscriber(null);
+        }
+        
+    }, [shouldTrack]);
 
     return [err];
 }
