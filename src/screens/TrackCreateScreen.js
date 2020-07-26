@@ -25,7 +25,7 @@ const TrackCreateScreen = () => {
                 timeInterval: milliSecondsInASecond,
                 distanceInterval: distanceIntervalInMeters
             }, (location) => {
-                console.log(location);
+                addLocation(location);
             });
         } catch(e) {
             setErr(e);
