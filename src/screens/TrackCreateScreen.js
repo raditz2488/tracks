@@ -8,7 +8,7 @@ import { Context as LocationContext } from '../contexts/LocationContext';
 import useLocation from '../hooks/useLocation';
 
 const TrackCreateScreen = () => {
-    const { addLocation } = useContext(LocationContext);
+    const { addLocation } = useContext( true, LocationContext);
     const [err] = useLocation(addLocation);
 
     return <>

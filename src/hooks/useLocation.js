@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { requestPermissionsAsync, watchPositionAsync, Accuracy } from 'expo-location';
 
-export default (callback) => {
+export default (shouldTrack, callback) => {
     const [err, setErr] = useState(null);
 
     const startWatching = async () => {
