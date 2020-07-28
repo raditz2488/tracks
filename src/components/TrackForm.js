@@ -5,7 +5,7 @@ import { Context as LocationContext } from '../contexts/LocationContext';
 
 const TrackForm = () => {
 
-    const { state, setName, startRecording } = useContext(LocationContext);
+    const { state, setName, startRecording, stopRecording } = useContext(LocationContext);
 
     return <>
         <Spacer>
@@ -16,6 +16,7 @@ const TrackForm = () => {
             />
         </Spacer>
         <Spacer>
+
             <Button title="Start recording" />
         </Spacer>
     </>
