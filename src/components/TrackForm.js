@@ -9,7 +9,11 @@ const TrackForm = () => {
 
     return <>
         <Spacer>
-            <Input placeholder="Enter track name" />
+            <Input 
+                placeholder="Enter track name" 
+                text={state.name}
+                onChangeText={ setName }
+            />
         </Spacer>
         <Spacer>
             <Button title="Start recording" />
