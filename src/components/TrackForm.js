@@ -16,8 +16,11 @@ const TrackForm = () => {
             />
         </Spacer>
         <Spacer>
-
-            <Button title="Start recording" />
+            { state.recording 
+                ? <Button title="Stop" onPress={ stopRecording } />
+                : <Button title="Start recording" onPress={ startRecording }/>
+            }
+            
         </Spacer>
     </>
 }
