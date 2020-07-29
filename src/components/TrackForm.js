@@ -5,22 +5,29 @@ import { Context as LocationContext } from '../contexts/LocationContext';
 
 const TrackForm = () => {
 
-    const { state, setName, startRecording, stopRecording } = useContext(LocationContext);
+    const { state: { name, recording, locations }, setName, startRecording, stopRecording } = useContext(LocationContext);
 
     return <>
         <Spacer>
             <Input 
                 placeholder="Enter track name" 
-                text={state.name}
+                text={name}
                 onChangeText={ setName }
             />
         </Spacer>
         <Spacer>
-            { state.recording 
-                ? <Button title="Stop" onPress={ stopRecording } />
-                : <Button title="Start recording" onPress={ startRecording }/>
+            { 
+                recording 
+                    ? <Button title="Stop" onPress={ stopRecording } />
+                    : <Button title="Start recording" onPress={ startRecording }/>
+            }   
+        </Spacer>
+        <Spacer>
+            {
+                recording && locations.length 
+                    ? <Button title="Save track" />
+                    : null
             }
-            
         </Spacer>
     </>
 }
