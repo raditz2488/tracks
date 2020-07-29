@@ -5,7 +5,7 @@ import { ListItem } from 'react-native-elements';
 
 
 const TrackListScreen = ( { navigation } ) => {
-    const { state } = useContext(TrackContext);
+    const { state, fetchTracks } = useContext(TrackContext);
 
     return <>
         <FlatList 
