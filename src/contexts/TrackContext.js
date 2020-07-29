@@ -14,7 +14,9 @@ const createTrack = dispatch => async (name, locations) => {
 };
 const fetchTracks = dispatch => async () => {
     const response = await trackerAPI.get('/tracks');
-    dispatch({ type:'fetch', payload: response.data });
+    console.log('Printing tracks::::::::');
+    console.log(response.data);
+    dispatch({ type:'fetch', payload: response.data.tracks });
 };
 
 export const { Context, Provider } = createDataContext(
