@@ -33,7 +33,7 @@ export default (shouldTrack, callback) => {
             setSubscriber(null);
         }
         
-    }, [shouldTrack]);
+    }, [shouldTrack, callback]);
 
     return [err];
 }
