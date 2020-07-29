@@ -1,11 +1,15 @@
 import React from 'react';
-import { View, StyleSheet, Text, Button } from 'react-native';
+import { StyleSheet, Button, FlatList } from 'react-native';
 
 const TrackListScreen = ( { navigation } ) => {
     return <>
-        <Text style={{ fontSize: 48 }}>TrackListScreen</Text>
+        <FlatList data={[]} />
         <Button title='Show detail' onPress={() => navigation.navigate('TrackDetail')}/>
     </>
+}
+
+TrackListScreen.navigationOptions = {
+    title: 'Track list'
 }
 
 const styles = StyleSheet.create({});
