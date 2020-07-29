@@ -3,34 +3,45 @@ import { requestPermissionsAsync, watchPositionAsync, Accuracy } from 'expo-loca
 
 export default (shouldTrack, callback) => {
     const [err, setErr] = useState(null);
-    const [subscriber, setSubscriber] = useState(null)
-
-    const startWatching = async () => {
-        const milliSecondsInASecond = 1000
-        const distanceIntervalInMeters = 10
-        try {
-            const granted = await requestPermissionsAsync()
-            if(!granted) {
-                throw new Error("Location permission not granted");
-            }
-            const sub = await watchPositionAsync({
-                accuracy: Accuracy.BestForNavigation,
-                timeInterval: milliSecondsInASecond,
-                distanceInterval: distanceIntervalInMeters
-            }, callback);
-
-            setSubscriber(sub);
-        } catch(e) {
-            setErr(e);
-        }
-    }
 
     useEffect(() => {
+        let subscriber = null;
+
+        const startWatching = async () => {
+            const milliSecondsInASecond = 1000
+            const distanceIntervalInMeters = 10
+            try {
+                const granted = await requestPermissionsAsync()
+                if(!granted) {
+                    throw new Error("Location permission not granted");
+                }
+                subscriber = await watchPositionAsync({
+                    accuracy: Accuracy.BestForNavigation,
+                    timeInterval: milliSecondsInASecond,
+                    distanceInterval: distanceIntervalInMeters
+                }, callback);
+            } catch(e) {
+                setErr(e);
+            }
+        }
+
+
         if(shouldTrack) {
             startWatching();
         } else {
-            subscriber.remove();
-            setSubscriber(null);
+            if(subscriber) {
+                subscriber.remove();
+            }
+            
+            subscriber = null
+        }
+
+        return () => {
+            if(subscriber) {
+                subscriber.remove();
+            }
+
+            subscriber = null;
         }
         
     }, [shouldTrack, callback]);
