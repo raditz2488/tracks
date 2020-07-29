@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { StyleSheet, FlatList } from 'react-native';
+import { StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { Context as TrackContext } from '../contexts/TrackContext';
 import { ListItem } from 'react-native-elements';
 import { NavigationEvents } from 'react-navigation';
@@ -14,7 +14,11 @@ const TrackListScreen = ( { navigation } ) => {
             data={ state } 
             keyExtractor={ item => item._id }
             renderItem={ ({ item }) => {
-                    return <ListItem chevron title={item.name} />
+                    return (
+                        <TouchableOpacity onPress={() => navigation.navigate('TrackDetail',{_id: item._id}) } >
+                            <ListItem chevron title={item.name} />
+                        </TouchableOpacity>
+                    )
                 }
             }
         />
