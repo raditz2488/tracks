@@ -26,7 +26,6 @@ const locationReducer = (state, action) => {
 };
 
 const startRecording = dispatch => () => {
-    console.log("Recording to start:::::::::");
     dispatch({type: 'start_recording'});
 };
 const stopRecording = dispatch => () => {
