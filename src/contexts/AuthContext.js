@@ -109,6 +109,7 @@ const logout = (dispatch) => async () => {
                 });
             }
         })
+        navigate('loginFlow');
     } catch(err) {
 
     }
