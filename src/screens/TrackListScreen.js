@@ -3,6 +3,7 @@ import { StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { Context as TrackContext } from '../contexts/TrackContext';
 import { ListItem } from 'react-native-elements';
 import { NavigationEvents } from 'react-navigation';
+import { FontAwesome } from '@expo/vector-icons';
 
 
 const TrackListScreen = ( { navigation } ) => {
@@ -23,10 +24,6 @@ const TrackListScreen = ( { navigation } ) => {
             }
         />
     </>
-}
-
-TrackListScreen.navigationOptions = {
-    title: 'Track list'
 }
 
 const styles = StyleSheet.create({});
